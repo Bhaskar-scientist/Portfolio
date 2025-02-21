@@ -1,0 +1,4 @@
+fastapi
+uvicorn
+cohere
+python-multipart
