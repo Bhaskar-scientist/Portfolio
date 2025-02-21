@@ -10,7 +10,7 @@ app = FastAPI()
 # Enable CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://gen01.onrender.com/"],  # Change this for security in production
+    allow_origins=["*"],  # Change this for security in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -20,7 +20,7 @@ app.add_middleware(
 logging.basicConfig(level=logging.INFO)
 
 # Initialize Cohere Client
-COHERE_API_KEY = "XmIYNlzlIZ0mLxCORf1Q65tABH8aD8DYZPYfOJIE"  # Replace with your actual key
+COHERE_API_KEY = os.getenv("API_KEY")  # Replace with your actual key
 co = cohere.ClientV2(api_key=COHERE_API_KEY)
 
 # Conversation memory (temporary storage, consider using Redis for persistence)
