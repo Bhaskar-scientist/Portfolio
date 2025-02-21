@@ -117,7 +117,7 @@ const ChatApp = () => {
             <FaPaperPlane />
           </button>
       </div>
-      <footer className="footer">Interview Assist</footer>
+      <footer className="footer">Crafted by Bhaskar Reddy</footer>
 
       <style jsx>{`
         .main-container {
