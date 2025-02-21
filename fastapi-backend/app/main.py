@@ -2,6 +2,7 @@ from fastapi import FastAPI, Form
 import uvicorn
 import logging
 import cohere
+import os
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
