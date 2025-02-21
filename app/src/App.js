@@ -70,7 +70,7 @@ const ChatApp = () => {
     setInputText("");
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/process-text/", {
+      const response = await fetch("https://gen1-8201.onrender.com/process-text/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams({ user_id: userId, question: inputText }),
