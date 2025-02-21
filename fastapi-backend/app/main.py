@@ -46,28 +46,6 @@ PREDEFINED_CONVERSATION = [
                "A **deep copy** creates a new object and recursively copies all objects inside, making them independent."
     },
     {
-    "role": "user",
-    "content": "Write a Python function to check if two strings are anagrams of each other."
-    },
-    {
-    "role": "assistant",
-    "content": "An anagram means two strings contain the same characters in the same frequency but in a different order.\n\n"
-               "**Approach:**\n"
-               "- Convert both strings to lowercase and remove spaces.\n"
-               "- Use `Counter` from `collections` to compare character counts.\n\n"
-               "------------------------\n"
-               "##Code:-\n"
-               "------------------------------\n"
-               "from collections import Counter\n\n"
-               "def are_anagrams(str1, str2):\n"
-               "    return Counter(str1.replace(' ', '').lower()) == Counter(str2.replace(' ', '').lower())\n\n"
-               "###Example\n"
-               "print(are_anagrams('listen', 'silent'))  # Output: True\n"
-               "print(are_anagrams('hello', 'world'))   # Output: False\n"
-               "------------------------------\n\n"
-               "**Time Complexity:** O(n) – We traverse both strings once."
-    },
-    {
         "role": "user",
         "content": "You are given an array of size N containing numbers from 1 to N+1, but one number is missing. How would you find it? -DSA"
     },
@@ -95,7 +73,6 @@ PREDEFINED_CONVERSATION = [
                    "**Time Complexity:** O(n) – We compute the sum in linear time.\n"
                    "**Space Complexity:** O(1) – No extra space is used."
     },
-
     {
         "role": "user",
         "content": "Given a string, find the first non-repeating character. -DSA"
