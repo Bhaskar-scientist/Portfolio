@@ -10,7 +10,7 @@ app = FastAPI()
 # Enable CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Change this for security in production
+    allow_origins=["https://gen01.onrender.com"],  # Change this for security in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
