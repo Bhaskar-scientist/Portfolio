@@ -9,7 +9,7 @@ app = FastAPI()
 # Enable CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Change this for security in production
+    allow_origins=["https://gen01.onrender.com/"],  # Change this for security in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -19,7 +19,7 @@ app.add_middleware(
 logging.basicConfig(level=logging.INFO)
 
 # Initialize Cohere Client
-COHERE_API_KEY = "XmIYNlzlIZ0mLxCORf1Q65tABH8aD8DYZPYfOJIE"  # Replace with your actual key
+COHERE_API_KEY = os.getenv("COHERE_API_KEY")  # Replace with your actual key
 co = cohere.ClientV2(api_key=COHERE_API_KEY)
 
 # Conversation memory (temporary storage, consider using Redis for persistence)
@@ -66,7 +66,10 @@ PREDEFINED_CONVERSATION = [
                "------------------------------\n\n"
                "**Time Complexity:** O(n) – We traverse both strings once."
     },
-
+    {
+        "role": "user",
+        "content": "You are given an array of size N containing numbers from 1 to N+1, but one number is missing. How would you find it? -DSA"
+    },
     {
         "role": "assistant",
         "content": "Great question! The array contains numbers from 1 to N+1, meaning one number is missing. Let’s analyze different approaches.\n\n"
@@ -94,7 +97,7 @@ PREDEFINED_CONVERSATION = [
 
     {
         "role": "user",
-        "content": "Given a string, find the first non-repeating character. - DSA"
+        "content": "Given a string, find the first non-repeating character. -DSA"
     },
     {
         "role": "assistant",
