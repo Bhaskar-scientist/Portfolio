@@ -144,7 +144,7 @@ async def process_text(user_id: str = Form(...), question: str = Form(...)):
         if not answer:
             return {"error": "Cohere API returned an empty response."}
 
-        formatted_answer = f"{format_response(answer)}\n\n🕒 Response Time: {elapsed_time:.4f} seconds"
+        formatted_answer = f"{format_response(answer)}\n\n🕒" # Response Time: {elapsed_time:.4f} seconds
         conversation_memory[user_id].append({"role": "assistant", "content": formatted_answer})
 
         # ✅ Print response time in the console
@@ -158,7 +158,7 @@ async def process_text(user_id: str = Form(...), question: str = Form(...)):
         return {"error": f"Error processing response: {str(e)}"}
 
 
-
+'''
 # Helper function to format the response
 def format_response(response_text, max_words=2000):
     """
@@ -177,6 +177,7 @@ def format_response(response_text, max_words=2000):
         formatted_text = trimmed_text
 
     return f"### Answer:\n{formatted_text}"
+'''
 
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000)
