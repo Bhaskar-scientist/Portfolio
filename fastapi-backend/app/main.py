@@ -144,7 +144,7 @@ async def process_text(user_id: str = Form(...), question: str = Form(...)):
         if not answer:
             return {"error": "Cohere API returned an empty response."}
 
-        formatted_answer = f"{format_response(answer)}\n\n🕒" # Response Time: {elapsed_time:.4f} seconds
+        formatted_answer = f"{format_response(answer)}\n\n🕒 Response Time: {elapsed_time:.4f} seconds"
         conversation_memory[user_id].append({"role": "assistant", "content": formatted_answer})
 
         # ✅ Print response time in the console
